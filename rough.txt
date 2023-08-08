@@ -1,0 +1,14 @@
+ var allFunctions = [
+        Math.sin,
+        Math.cos,
+        Math.tan,
+        Math.acos,
+        Math.atan,
+        Math.sinh,
+        Math.cosh,
+        Math.tanh,
+        Math.asinh,
+        Math.acosh,
+      ];
+      let ran = Math.round(Math.random() * allFunctions.length);
+      dot.style.animationDelay = `${allFunctions[ran](i * j) / 2}s`;

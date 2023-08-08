@@ -1,0 +1,87 @@
+* {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --background: rgb(255, 255, 255);
+  --floralwhite: rgb(24, 24, 24);
+  --dotscolor: rgb(21, 21, 21);
+
+  /* Fonts */
+  --fontfamily: "FF DIN Pro Condensed", sans-serif;
+  --fontfamily2: "Ibarra Real Nova", serif;
+  --font-style-heading: italic;
+
+  /* Fonts */
+  --fontsize: clamp(3rem, 5vw, 5rem);
+  --fontsize2: clamp(2rem, 2vw, 2rem);
+
+  /* Colors */
+  --bg-color: hsl(256, 33%, 10%);
+  --dot-color: hsl(0, 0%, 0%);
+
+  /* Dimensions */
+}
+
+body {
+  background-color: var(--background);
+  margin: 0px;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(0, 0, 0);
+  margin: 5px;
+  padding: 5px;
+}
+
+.container-title {
+  color: var(--floralwhite);
+  font-family: var(--fontfamily);
+  font-size: var(--fontsize);
+  font-style: var(--font-style-heading);
+}
+.menu-item-resume {
+  color: var(--floralwhite);
+  font-family: var(--fontfamily2);
+  font-size: var(--fontsize2);
+}
+.meta-link {
+  color: var(--floralwhite);
+  text-decoration: none;
+}
+.dot-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 1%;
+  left: -1%;
+  display: grid;
+  grid-template-columns: repeat(60, 30px);
+  grid-template-rows: repeat(40, 30px);
+}
+
+.dot {
+  --dotsize: 2px;
+  height: var(--dotsize);
+  width: var(--dotsize);
+  border-radius: var(--dotsize);
+  background-color: black;
+  z-index: -1;
+  /* animation: name duration timing delay iteration direction fill play; */
+  animation-name: dotsanimation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+@keyframes dotsanimation {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(12px, 12px);
+  }
+}
